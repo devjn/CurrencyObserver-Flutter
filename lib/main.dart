@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
           primarySwatch: Colors.pink,
           primaryColor: defaultTargetPlatform == TargetPlatform.iOS
-              ? Colors.grey[100]
+              ? Colors.blue[200]
               : null),
       home: new Bottom(),
     );
