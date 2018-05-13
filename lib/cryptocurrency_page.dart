@@ -57,7 +57,8 @@ class _CryptocurrencyPageState extends State<CryptocurrencyPage>
   }
 
   Widget _getListItemUi(Crypto crypto) {
-    return new Material(child: ListTile(
+    return PlatformListItemHolder(
+        child: ListTile(
       leading: new CachedNetworkImage(
         placeholder: new Icon(FontAwesomeIcons.bitcoin),
         imageUrl: crypto.getImageUrl(),
@@ -74,7 +75,7 @@ class _CryptocurrencyPageState extends State<CryptocurrencyPage>
             ],
           )),
       subtitle: _getSubtitleText(crypto),
-    ));
+    )).create();
   }
 
   Widget _getSubtitleText(Crypto crypto) {
@@ -95,9 +96,8 @@ class _CryptocurrencyPageState extends State<CryptocurrencyPage>
         style: new TextStyle(color: change > 0 ? Colors.green : Colors.red));
   }
 
-  TextSpan _getDefaultTextSpan(String text) {
-    return new TextSpan(text: text, style: new TextStyle(color: Colors.black));
-  }
+  TextSpan _getDefaultTextSpan(String text) =>
+      TextSpan(text: text, style: TextStyle(color: Colors.black));
 
   @override
   void onLoadCryptoComplete(List<Crypto> items) {

@@ -30,14 +30,11 @@ class PlatformScaffold
   });
 
   @override
-  Scaffold createAndroidWidget() {
-    return new Scaffold(appBar: appBar, body: body);
-  }
+  Scaffold createAndroidWidget() => Scaffold(appBar: appBar, body: body);
 
   @override
-  CupertinoPageScaffold createIosWidget() {
-    return new CupertinoPageScaffold(navigationBar: appBar, child: body);
-  }
+  CupertinoPageScaffold createIosWidget() =>
+      CupertinoPageScaffold(navigationBar: appBar, child: body);
 }
 
 class PlatformAppBar extends PlatformWidgetCreator<CupertinoNavigationBar,
@@ -51,17 +48,28 @@ class PlatformAppBar extends PlatformWidgetCreator<CupertinoNavigationBar,
   });
 
   @override
-  CupertinoNavigationBar createIosWidget() => new CupertinoNavigationBar(
+  CupertinoNavigationBar createIosWidget() => CupertinoNavigationBar(
         leading: leading,
         middle: title,
       );
 
   @override
-  AppBar createAndroidWidget() => new AppBar(
+  AppBar createAndroidWidget() => AppBar(
         leading: leading,
         title: title,
         elevation: 5.0,
       );
 }
 
+class PlatformListItemHolder
+    extends PlatformWidgetCreator<Material, Card, Widget> {
+  final Widget child;
 
+  PlatformListItemHolder({this.child});
+
+  @override
+  Material createIosWidget() => Material(child: child);
+
+  @override
+  Card createAndroidWidget() => Card(child: child);
+}

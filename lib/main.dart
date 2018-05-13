@@ -1,4 +1,3 @@
-import 'package:currencyobserverflutter/bottom_navigation.dart';
 import 'package:currencyobserverflutter/dependency_injection.dart';
 import 'package:currencyobserverflutter/main_navigation.dart';
 import 'package:flutter/foundation.dart';
