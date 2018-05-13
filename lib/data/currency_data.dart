@@ -42,6 +42,6 @@ class CurrencyData {
   }
 
   String getImageUrl() {
-    return "http://www.xe.com/themes/xe/images/flags/${name.toLowerCase()}.png";
+    return "https://raw.githubusercontent.com/transferwise/currency-flags/master/src/flags/${name.toLowerCase()}.png";
   }
 }
