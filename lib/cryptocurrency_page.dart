@@ -56,8 +56,8 @@ class _CryptocurrencyPageState extends State<CryptocurrencyPage>
     ));
   }
 
-  ListTile _getListItemUi(Crypto crypto) {
-    return new ListTile(
+  Widget _getListItemUi(Crypto crypto) {
+    return new Material(child: ListTile(
       leading: new CachedNetworkImage(
         placeholder: new Icon(FontAwesomeIcons.bitcoin),
         imageUrl: crypto.getImageUrl(),
@@ -74,7 +74,7 @@ class _CryptocurrencyPageState extends State<CryptocurrencyPage>
             ],
           )),
       subtitle: _getSubtitleText(crypto),
-    );
+    ));
   }
 
   Widget _getSubtitleText(Crypto crypto) {

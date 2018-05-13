@@ -56,15 +56,15 @@ class _CurrencyPageState extends State<CurrencyPage>
     ));
   }
 
-  ListTile _getListItemUi(CurrencyData currency) {
-    return new ListTile(
+  Widget _getListItemUi(CurrencyData currency) {
+    return new Material(child: ListTile(
       leading: new CachedNetworkImage(
         placeholder: new Icon(Icons.attach_money),
         imageUrl: currency.getImageUrl(),
       ),
       title: new Text(currency.getText(),
           style: new TextStyle(fontWeight: FontWeight.bold)),
-    );
+    ));
   }
 
   @override
